@@ -1,5 +1,5 @@
 import qrcode
-
+#this is really important
 def generate_qr(driver_id, filename="driver_qr.png"):
     base_url = "http://localhost:3030/app"
     full_url = f"{base_url}?id={driver_id}"
