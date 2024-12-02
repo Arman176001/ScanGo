@@ -11,11 +11,21 @@ const port = 3030;
 const app = express();
 
 app.use(cors({
+    origin: 'https://scango.tech', // Allow this specific origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS for preflight
+    allowedHeaders: ['Content-Type', 'Authorization'], // Specify necessary headers
+    credentials: true // Allow cookies/authorization headers
+}));
+
+app.options('*', cors({
     origin: 'https://scango.tech',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true // If cookies or authorization headers are used
-  }));
-  
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
+
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
