@@ -105,7 +105,7 @@ app.get('/app', async (req, res) => {
                     }
 
                     // Redirect to main page after the scan is tracked
-                    window.location.href = 'http://localhost:3000/main';
+                    window.location.href = 'https://scango.tech/main';
                 }
 
                 // Run trackScan when the page loads

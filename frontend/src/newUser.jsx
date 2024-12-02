@@ -73,7 +73,7 @@ function NewUser() {
 
     if (validateForm()) {
       try {
-        const response = await fetch("http://localhost:3030/data", {
+        const response = await fetch("https://scan-go-server.vercel.app/data", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
