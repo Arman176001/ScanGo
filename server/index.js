@@ -10,7 +10,13 @@ const supabase = createClient(SUPABASE_URL, process.env.SERVICE_KEY);
 const port = 3030;
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+    origin: 'https://scango.tech',
+    methods: ['GET', 'POST', 'OPTIONS'], // Add allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Add allowed headers
+  };
+  
+  app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
